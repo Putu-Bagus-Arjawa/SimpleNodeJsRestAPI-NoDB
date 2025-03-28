@@ -11,10 +11,11 @@ export const getBookById = (req, res)=>{
    res.json(book)
 }
 export const createBook = (req, res)=>{
+  const {title, author} = req.body;
   const book = {
     id: books.length +1,
-    title : req.body.title,
-    author: req.body.author
+    title,
+    author,
   }
   books.push(book)
   res.status(201).json(book)
